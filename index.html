@@ -455,83 +455,144 @@
       <section class="section spirit" id="spirit">
         <div class="container spirit__inner">
           <div class="spirit__art" aria-hidden="true">
-            <svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
+            <!--
+              Brand toucan — upright perched silhouette (anatomy after the Vecteezy reference,
+              palette after the Tucano Labs logo: navy body, teal accents, yellow beak, navy tip).
+              Layers back-to-front: halo → tail → branch → body → wing-shadow → face → beak → eye.
+            -->
+            <svg viewBox="0 0 480 600" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="bigBeak" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0%" stop-color="#FFB627" />
-                  <stop offset="55%" stop-color="#FF6B1A" />
-                  <stop offset="100%" stop-color="#E84A0E" />
-                </linearGradient>
-                <linearGradient id="bodyGrad" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="0%" stop-color="#1A1F2E" />
-                  <stop offset="100%" stop-color="#0F1420" />
-                </linearGradient>
-                <radialGradient id="halo" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#00B4A6" stop-opacity="0.22" />
+                <radialGradient id="halo" cx="52%" cy="42%" r="55%">
+                  <stop offset="0%"   stop-color="#00B4A6" stop-opacity="0.22" />
+                  <stop offset="60%"  stop-color="#00B4A6" stop-opacity="0.05" />
                   <stop offset="100%" stop-color="#00B4A6" stop-opacity="0" />
                 </radialGradient>
               </defs>
 
-              <!-- Soft halo -->
-              <circle cx="180" cy="180" r="170" fill="url(#halo)" />
+              <!-- Soft teal halo -->
+              <circle cx="240" cy="260" r="240" fill="url(#halo)" />
 
-              <!-- Perch -->
-              <path
-                d="M70 280h220"
-                stroke="#00B4A6"
-                stroke-width="6"
-                stroke-linecap="round"
-                opacity="0.55"
-              />
+              <!-- ============ TAIL (long single drop, visible well below the branch) ============ -->
+              <path d="M196 380
+                       Q176 480 196 558
+                       Q230 574 264 558
+                       Q284 480 264 380 Z"
+                    fill="#1F2D6E" stroke="#0F1420" stroke-width="4"
+                    stroke-linejoin="round" />
+              <!-- Teal tail-tip accent -->
+              <path d="M192 510
+                       Q188 542 196 558
+                       Q230 574 264 558
+                       Q272 542 268 510 Z"
+                    fill="#1E9D9D" stroke="#0F1420" stroke-width="4"
+                    stroke-linejoin="round" />
 
-              <!-- Body (rounded teardrop) -->
-              <path
-                d="M150 110c-46 4-78 38-78 84 0 50 38 86 90 86 24 0 46-8 62-22-8-12-12-26-12-42 0-30 16-56 40-70-22-22-54-38-90-38-4 0-8 0-12 2Z"
-                fill="url(#bodyGrad)"
-              />
+              <!-- ============ BRANCH (clean horizontal bar) ============ -->
+              <rect x="20" y="406" width="440" height="14" rx="4"
+                    fill="#0F1420" />
 
-              <!-- White chest -->
-              <path
-                d="M120 196c0-24 18-44 44-50 18-4 38 0 52 12-6 8-10 18-12 30-3 18 1 32 12 46-12 8-26 12-42 12-30 0-54-22-54-50Z"
-                fill="#FFFFFF"
-              />
+              <!-- ============ BODY (chunky pear silhouette, upright, leaning into beak) ============ -->
+              <!--
+                Trace: chin (top-right) → over crown → down the back → tail base (bottom)
+                       → across underside → up belly → chest → throat → back up to chin
+              -->
+              <path d="M312 138
+                       Q386 156 392 234
+                       Q394 322 354 376
+                       Q336 400 304 410
+                       L196 410
+                       Q150 400 134 348
+                       Q124 264 152 192
+                       Q188 134 264 130
+                       Q298 130 312 138 Z"
+                    fill="#1F2D6E" stroke="#0F1420" stroke-width="4"
+                    stroke-linejoin="round" />
 
-              <!-- Tail tip accent -->
-              <path
-                d="M70 244c8-2 16-2 24 0 4 8 6 16 6 26-12 4-22 0-30-8 0-6 0-12 0-18Z"
-                fill="#FFB627"
-              />
+              <!-- ============ WHITE FACE / THROAT (carved into the front of the body) ============ -->
+              <path d="M334 156
+                       Q286 142 262 174
+                       Q240 210 240 256
+                       Q244 304 268 326
+                       Q304 338 338 318
+                       Q346 280 348 230
+                       Q346 184 334 156 Z"
+                    fill="#FAFBFC" stroke="#0F1420" stroke-width="3.5"
+                    stroke-linejoin="round" />
 
-              <!-- BEAK (signature element) -->
-              <path
-                d="M252 96c18 4 42 14 60 30 14 14 22 32 22 50 0 16-6 30-18 38-12 8-26 8-38 4-14-6-22-18-22-32-12 4-26 4-38-2-12-6-18-18-18-30 0-22 22-44 52-58Z"
-                fill="url(#bigBeak)"
-              />
+              <!-- ============ WING (folded, on the BACK side of the body — left side in profile) ============ -->
+              <path d="M188 218
+                       Q160 248 154 310
+                       Q156 360 188 388
+                       Q236 396 268 384
+                       Q252 348 240 304
+                       Q224 256 210 226
+                       Q198 214 188 218 Z"
+                    fill="#1E9D9D" stroke="#0F1420" stroke-width="4"
+                    stroke-linejoin="round" />
+              <!-- Wing primary feather hints -->
+              <path d="M180 270 Q220 290 248 340"
+                    stroke="#1F2D6E" stroke-width="2.5"
+                    fill="none" opacity="0.65" stroke-linecap="round" />
+              <path d="M170 320 Q210 348 244 374"
+                    stroke="#1F2D6E" stroke-width="2.5"
+                    fill="none" opacity="0.55" stroke-linecap="round" />
 
-              <!-- Beak ridge highlight -->
-              <path
-                d="M260 110c20 4 44 16 58 32"
-                stroke="#FFFFFF"
-                stroke-width="3"
-                stroke-linecap="round"
-                opacity="0.35"
-                fill="none"
-              />
+              <!-- ============ BEAK ============ -->
+              <!-- Black band where beak meets the face -->
+              <path d="M334 158
+                       Q352 156 354 220
+                       Q346 240 328 238
+                       Q322 218 322 188
+                       Q326 168 334 158 Z"
+                    fill="#0F1420" />
 
-              <!-- Beak base shadow line -->
-              <path
-                d="M210 158c12 8 28 10 42 6"
-                stroke="#0F1420"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                opacity="0.35"
-                fill="none"
-              />
+              <!-- Upper mandible: huge yellow banana, sweeps right and down -->
+              <path d="M346 156
+                       Q426 142 462 188
+                       Q472 218 454 234
+                       Q428 242 400 234
+                       Q360 224 340 222
+                       Q326 212 330 190
+                       Q336 168 346 156 Z"
+                    fill="#F5C342" stroke="#0F1420" stroke-width="4"
+                    stroke-linejoin="round" />
 
-              <!-- Eye -->
-              <circle cx="208" cy="138" r="9" fill="#FFFFFF" />
-              <circle cx="210" cy="139" r="5.5" fill="#0F1420" />
-              <circle cx="212" cy="137" r="1.6" fill="#FFFFFF" />
+              <!-- Lower mandible -->
+              <path d="M338 224
+                       Q386 242 436 242
+                       Q452 242 446 254
+                       Q432 264 396 260
+                       Q358 254 332 246
+                       Q324 234 338 224 Z"
+                    fill="#F5C342" stroke="#0F1420" stroke-width="4"
+                    stroke-linejoin="round" />
+
+              <!-- Navy beak tip (signature wraparound) -->
+              <path d="M432 188
+                       Q470 202 454 234
+                       Q438 242 418 238
+                       Q414 222 418 206
+                       Q424 194 432 188 Z"
+                    fill="#1F2D6E" stroke="#0F1420" stroke-width="4"
+                    stroke-linejoin="round" />
+
+              <!-- Beak split line between the mandibles -->
+              <path d="M340 224 Q400 234 448 246"
+                    stroke="#0F1420" stroke-width="2.5"
+                    fill="none" opacity="0.85" stroke-linecap="round" />
+
+              <!-- Nostril dot near base -->
+              <circle cx="350" cy="186" r="2" fill="#0F1420" opacity="0.7" />
+
+              <!-- ============ EYE (small, on white face, with eyelash hint) ============ -->
+              <circle cx="296" cy="186" r="8" fill="#FAFBFC"
+                      stroke="#0F1420" stroke-width="3" />
+              <circle cx="297" cy="187" r="4.6" fill="#0F1420" />
+              <circle cx="299" cy="185" r="1.5" fill="#FAFBFC" />
+              <!-- Eyelash flick -->
+              <path d="M290 176 Q295 170 302 174"
+                    stroke="#0F1420" stroke-width="2.5"
+                    fill="none" stroke-linecap="round" />
             </svg>
           </div>
           <div class="spirit__copy">
