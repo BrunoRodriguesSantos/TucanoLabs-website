@@ -1,15 +1,15 @@
-# Tucano Labs — Website
+# Tucano Labs Website
 
 Marketing site for **Tucano Labs**, a senior-led IT consultancy in Aotearoa New Zealand
 serving the ANZ region.
 
 ## Stack
 
-Static site — zero build step, zero dependencies.
+Static site with zero build step and zero dependencies.
 
-- `index.html` — page structure and content
-- `styles.css` — design system (Plus Jakarta Sans + Inter, Tropical Tech palette)
-- `script.js` — sticky-nav state, dynamic footer year, hero card parallax
+- `index.html`: page structure and content
+- `styles.css`: design system (Plus Jakarta Sans + Inter, Tropical Tech palette)
+- `script.js`: sticky-nav state, dynamic footer year, hero card parallax
 
 ## Running locally
 
@@ -19,6 +19,13 @@ python3 -m http.server 8080
 ```
 
 Or open `index.html` directly in a browser.
+
+## Deploying
+
+Hosted on Cloudflare Pages, connected to this GitHub repo. Every push to `main`
+deploys automatically. No build command; output directory is the repo root (`/`).
+
+Live domain: **tucanolabs.net**. Contact: **info@tucanolabs.net**.
 
 ## Brand
 
@@ -30,8 +37,8 @@ Or open `index.html` directly in a browser.
 
 ## Sections
 
-1. Hero — *Precision Engineering. Data-Driven Growth.*
-2. The Four Pillars — Software / Data / Cloud / Operational Tech
-3. Founder-Led Advantage — Bruno & Danilo
-4. The Tucano Spirit — Brazilian heritage × NZ reliability
-5. CTA — Book a Strategic Consultation
+1. Hero: *Precision Engineering. Data-Driven Growth.*
+2. The Four Pillars: Software / Data / Cloud / Operational Tech
+3. Founder-Led Advantage: Bruno & Danilo
+4. The Tucano Spirit: Brazilian heritage meets NZ reliability
+5. CTA: Book a Strategic Consultation

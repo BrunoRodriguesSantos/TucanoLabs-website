@@ -1,5 +1,5 @@
 // ============================================================
-// Tucano Labs — small enhancement layer
+// Tucano Labs / small enhancement layer
 // ============================================================
 
 (function () {
