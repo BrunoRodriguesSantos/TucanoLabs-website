@@ -321,6 +321,7 @@ p {
 .brand__mark {
   width: 34px;
   height: 34px;
+  object-fit: contain;
   filter: drop-shadow(0 4px 10px rgba(255, 107, 26, 0.25));
 }
 
@@ -902,9 +903,11 @@ p {
   place-items: center;
 }
 
-.spirit__art svg {
+.spirit__art svg,
+.spirit__logo {
   width: 100%;
   max-width: 420px;
+  height: auto;
   filter: drop-shadow(0 24px 40px rgba(31, 45, 110, 0.18));
   animation: bob 6s ease-in-out infinite;
 }
@@ -1120,7 +1123,8 @@ p {
   .founder:nth-child(2) { margin-top: 0; }
 
   .spirit__inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
-  .spirit__art svg { max-width: 320px; }
+  .spirit__art svg,
+  .spirit__logo { max-width: 320px; }
   .spirit__chips { justify-content: center; }
   .eyebrow { margin-left: auto; margin-right: auto; }
 
