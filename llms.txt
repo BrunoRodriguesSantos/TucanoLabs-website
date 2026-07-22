@@ -1,0 +1,33 @@
+# Tucano Labs
+
+> Tucano Labs is a New Zealand tech startup building Tucano Nest, an AI-powered,
+> cloud-based all-in-one business platform that unifies ERP, CRM and BI in a
+> single system, with Kea, an LLM-based AI assistant that works like a member
+> of your team. Currently in beta with early-access customers.
+
+## Products
+
+- [Tucano Nest](https://tucanolabs.net/#product): AI-powered one-stop-shop
+  business platform. Modules: ERP (invoicing, purchasing, inventory, cash flow),
+  CRM (pipeline, contacts, quotes, follow-ups), BI (live dashboards,
+  natural-language reporting, forecasting). Cloud-native SaaS built on Google
+  Cloud. Development stage: beta, live with early-access customers.
+- [Kea AI Assistant](https://tucanolabs.net/#kea): LLM-based AI assistant built
+  into Tucano Nest. Answers plain-English questions over business data, drafts
+  invoices, emails and reports, automates routine workflows with human
+  approval.
+
+## Services
+
+- [Solutions & Services](https://tucanolabs.net/#services): custom AI
+  automation, integrations and data migration/onboarding delivered on top of
+  the Tucano Nest platform.
+
+## Company
+
+- [About Us](https://tucanolabs.net/#about): founded by Bruno Santos
+  (Co-Founder & CTO, 17+ years engineering high-scale platforms) and Danilo
+  Albertini (Co-Founder & CEO, 16+ years in product, data science and BI).
+  Based in Auckland, New Zealand. Available worldwide.
+- [LinkedIn](https://www.linkedin.com/company/tucano-labs-ltd)
+- Contact: info@tucanolabs.net
