@@ -10,6 +10,10 @@
   --teal: #00b4a6;
   --teal-deep: #008f84;
 
+  /* Darker variants for small text: meet WCAG AA contrast on light backgrounds */
+  --orange-text: #bc3908;
+  --teal-text: #0f766e;
+
   /* Neutrals */
   --ink: #0f1420;
   --ink-2: #1a1f2e;
@@ -143,7 +147,7 @@ p {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--orange-deep);
+  color: var(--orange-text);
   background: var(--bg-tint);
   border: 1px solid rgba(255, 107, 26, 0.18);
   padding: 8px 14px;
@@ -340,7 +344,7 @@ p {
 }
 
 .brand__accent {
-  color: var(--orange);
+  color: var(--orange-deep);
   margin-left: 2px;
 }
 
@@ -550,7 +554,7 @@ p {
 
 .card__delta {
   font-size: 0.82rem;
-  color: var(--teal-deep);
+  color: var(--teal-text);
   font-weight: 600;
 }
 
@@ -866,7 +870,7 @@ p {
   margin-top: 4px;
   font-size: 0.92rem;
   font-weight: 600;
-  color: var(--orange-deep);
+  color: var(--orange-text);
 }
 
 .founder__bio {
@@ -1072,7 +1076,7 @@ p {
   gap: 32px;
 }
 
-.footer__cols h4 {
+.footer__cols h3 {
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -1213,7 +1217,7 @@ p {
 }
 
 .shot__navitem--on {
-  color: var(--orange-deep);
+  color: var(--orange-text);
   background: var(--bg-tint);
 }
 
@@ -1265,11 +1269,11 @@ p {
 .shot__kpi-delta {
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--teal-deep);
+  color: var(--teal-text);
 }
 
 .shot__kpi-delta--warn {
-  color: var(--orange-deep);
+  color: var(--orange-text);
 }
 
 .shot__chart {
@@ -1355,7 +1359,7 @@ p {
 }
 
 .stage__step--now .stage__name {
-  color: var(--orange-deep);
+  color: var(--orange-text);
 }
 
 .stage__desc {

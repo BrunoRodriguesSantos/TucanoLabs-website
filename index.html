@@ -9,15 +9,28 @@
       name="description"
       content="Tucano Labs is a New Zealand tech startup building Tucano Nest, the AI-powered, cloud-based all-in-one business platform that unifies ERP, CRM and BI, with Kea, an LLM-based AI assistant that works like a member of your team."
     />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Load fonts without blocking first paint; system fonts show until ready -->
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/png" href="tucano-labs-logo.png" />
-    <link rel="apple-touch-icon" href="tucano-labs-logo.png" />
+    <link rel="icon" type="image/png" href="favicon-64.png" />
+    <link rel="apple-touch-icon" href="favicon-64.png" />
 
     <link rel="canonical" href="https://tucanolabs.net/" />
 
@@ -31,6 +44,10 @@
       content="One AI-powered platform to run your whole business. Tucano Nest unifies ERP, CRM and BI, with Kea, an LLM-based AI assistant built in."
     />
     <meta property="og:image" content="https://tucanolabs.net/tucano-labs-logo1.png" />
+    <meta property="og:image:width" content="959" />
+    <meta property="og:image:height" content="682" />
+    <meta property="og:image:alt" content="Tucano Labs logo" />
+    <meta property="og:locale" content="en_NZ" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Tucano Labs | Tucano Nest — AI-Powered ERP, CRM & BI in One Platform" />
@@ -39,6 +56,7 @@
       content="One AI-powered platform to run your whole business. Tucano Nest unifies ERP, CRM and BI, with Kea, an LLM-based AI assistant built in."
     />
     <meta name="twitter:image" content="https://tucanolabs.net/tucano-labs-logo1.png" />
+    <meta name="twitter:image:alt" content="Tucano Labs logo" />
 
     <!-- Structured data: tells Google what the business is -->
     <script type="application/ld+json">
@@ -98,11 +116,13 @@
     <!-- ============ NAV ============ -->
     <header class="nav" id="nav">
       <div class="container nav__inner">
-        <a href="#top" class="brand" aria-label="Tucano Labs home">
+        <a href="#top" class="brand" aria-label="TucanoLabs home">
           <img
             class="brand__mark"
-            src="tucano-labs-logo.png"
+            src="tucano-mark-128.webp"
             alt=""
+            width="34"
+            height="34"
             aria-hidden="true"
           />
           <span class="brand__word">Tucano<span class="brand__accent">Labs</span></span>
@@ -790,8 +810,11 @@
           <div class="spirit__art" aria-hidden="true">
             <img
               class="spirit__logo"
-              src="tucano-labs-logo1.png"
+              src="tucano-spirit-720.webp"
               alt="Tucano Labs logo"
+              width="720"
+              height="512"
+              loading="lazy"
             />
           </div>
           <div class="spirit__copy">
@@ -853,8 +876,10 @@
           <a href="#top" class="brand brand--footer">
             <img
               class="brand__mark"
-              src="tucano-labs-logo.png"
+              src="tucano-mark-128.webp"
               alt=""
+              width="34"
+              height="34"
               aria-hidden="true"
             />
             <span class="brand__word">Tucano<span class="brand__accent">Labs</span></span>
@@ -866,7 +891,7 @@
         </div>
         <div class="footer__cols">
           <div>
-            <h4>Product</h4>
+            <h3>Product</h3>
             <ul>
               <li><a href="#product">Tucano Nest</a></li>
               <li><a href="#kea">Kea AI Assistant</a></li>
@@ -876,7 +901,7 @@
             </ul>
           </div>
           <div>
-            <h4>Company</h4>
+            <h3>Company</h3>
             <ul>
               <li><a href="#about">About Us</a></li>
               <li><a href="#spirit">Our Story</a></li>
@@ -887,7 +912,7 @@
             </ul>
           </div>
           <div>
-            <h4>Get in touch</h4>
+            <h3>Get in touch</h3>
             <ul>
               <li><a href="mailto:info@tucanolabs.net">info@tucanolabs.net</a></li>
               <li>Auckland · New Zealand</li>
