@@ -558,28 +558,51 @@ function typeInto(el, text, speed, done) {
     });
   });
 
-  // A linha com .grad pinta o texto recortando um gradiente do PRÓPRIO
-  // elemento. Com as letras em inline-block esse recorte não alcança mais os
-  // filhos e a linha some. Solução: cada letra carrega o mesmo gradiente,
-  // dimensionado à linha inteira e deslocado pela posição dela — o degradê
-  // volta a ser contínuo, agora atravessando spans independentes.
+  // A linha .grad pinta o texto recortando um gradiente (background-clip:text).
+  // Com as letras em spans que ganham will-change/transform, o Chrome promove
+  // cada uma a camada própria durante a animação de entrada e o recorte falha
+  // por alguns frames: o gradiente aparece como retângulo cheio.
+  // Solução: nada de background nas letras. Cada uma recebe uma cor sólida
+  // amostrada do mesmo gradiente pela sua posição na linha. Visualmente igual,
+  // e sem recorte não há o que quebrar.
+  const lerCor = (nome) => {
+    const v = getComputedStyle(document.documentElement).getPropertyValue(nome).trim();
+    const m = v.match(/^#?([0-9a-f]{6})$/i);
+    if (!m) return [0, 0, 0];
+    const n = parseInt(m[1], 16);
+    return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  };
+
   const paintGradient = () => {
-    title.querySelectorAll(".rl__i.grad").forEach((line) => {
-      const grad = getComputedStyle(line).backgroundImage;
-      if (!grad || grad === "none") return;
-      const lr = line.getBoundingClientRect();
-      line.querySelectorAll(".c").forEach((c) => {
-        const prev = c.style.transform;
-        c.style.transform = "none"; // mede a posição de repouso
-        const off = c.getBoundingClientRect().left - lr.left;
-        c.style.transform = prev;
-        c.style.backgroundImage = grad;
-        c.style.backgroundSize = Math.round(lr.width) + "px 100%";
-        c.style.backgroundPosition = Math.round(-off) + "px 0";
-        c.style.backgroundRepeat = "no-repeat";
-        c.style.webkitBackgroundClip = "text";
-        c.style.backgroundClip = "text";
-      });
+    const linha = title.querySelector(".rl__i.grad");
+    if (!linha) return;
+    const paradas = [
+      { p: 0, c: lerCor("--navy") },
+      { p: 0.55, c: lerCor("--teal") },
+      { p: 1, c: lerCor("--teal-bright") },
+    ];
+    const amostra = (t) => {
+      let i = 1;
+      while (i < paradas.length - 1 && t > paradas[i].p) i++;
+      const a = paradas[i - 1], b = paradas[i];
+      const k = b.p === a.p ? 0 : (t - a.p) / (b.p - a.p);
+      return "rgb(" + a.c.map((v, j) => Math.round(v + (b.c[j] - v) * k)).join(",") + ")";
+    };
+
+    // o gradiente do CSS deixa de ser usado nesta linha
+    linha.style.backgroundImage = "none";
+    const lr = linha.getBoundingClientRect();
+    const largura = lr.width || 1;
+    linha.querySelectorAll(".c").forEach((c) => {
+      const anterior = c.style.transform;
+      c.style.transform = "none"; // mede a posição de repouso
+      const cr = c.getBoundingClientRect();
+      c.style.transform = anterior;
+      const t = Math.min(1, Math.max(0, (cr.left + cr.width / 2 - lr.left) / largura));
+      c.style.color = amostra(t);
+      c.style.backgroundImage = "none";
+      c.style.webkitBackgroundClip = "border-box";
+      c.style.backgroundClip = "border-box";
     });
   };
 
