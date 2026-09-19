@@ -348,7 +348,7 @@ p {
 /* =========== HERO =========== */
 .hero {
   position: relative;
-  padding: 120px 0 100px;
+  padding: clamp(44px, 5.5vh, 84px) 0 clamp(40px, 5vh, 72px);
   overflow: hidden;
   isolation: isolate;
 }
@@ -1489,10 +1489,12 @@ p {
 .hero__inner {
   grid-template-columns: minmax(0, 1fr);
   gap: 0;
-  min-height: 78vh;
-  align-content: center;
-  padding-top: 72px;
-  padding-bottom: 56px;
+  /* Sem min-height nem centralização vertical: numa tela alta, centralizar
+     dentro de 78vh empurrava o título para baixo e abria um vão enorme
+     entre o menu e a manchete. O conteúdo agora começa logo abaixo do topo. */
+  align-content: start;
+  padding-top: 0;
+  padding-bottom: clamp(28px, 3.5vh, 48px);
 }
 
 .hero__copy {
@@ -2289,3 +2291,61 @@ p {
 
 /* Mercados atendidos: sem marcador. O ponto empurrava o texto 12px à direita
    e essa coluna deixava de alinhar com as outras três do rodapé. */
+
+/* ---------- WhatsApp ----------
+   Escrito por extenso de propósito. Só o número faz a pessoa pensar em
+   ligação — que só funciona para quem está na Nova Zelândia. */
+.btn--wa {
+  color: #fff;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.btn--wa:hover {
+  transform: translateY(-1px);
+  color: var(--ink);
+  background: #fff;
+  border-color: #fff;
+}
+
+.btn--wa svg {
+  width: 18px;
+  height: 18px;
+}
+
+.cta__wa-note {
+  margin: 18px auto 0;
+  max-width: 460px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* rodapé: rótulo em cima, número embaixo */
+.footer__col .wa {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--slate);
+  transition: color 0.2s ease;
+}
+
+.footer__col .wa:hover { color: var(--teal-deep); }
+
+.wa__top {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+}
+
+.wa__top svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  color: var(--teal);
+}
+
+.wa__num {
+  font-size: 0.86rem;
+  color: var(--muted);
+}
