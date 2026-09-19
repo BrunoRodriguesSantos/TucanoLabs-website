@@ -8,8 +8,9 @@ serving the ANZ region.
 Static site with zero build step and zero dependencies.
 
 - `index.html`: page structure and content
-- `styles.css`: design system (Plus Jakarta Sans + Inter, Tropical Tech palette)
-- `script.js`: sticky-nav state, dynamic footer year, hero card parallax
+- `styles.css`: design system (Space Grotesk + Inter, toucan teal/navy palette)
+- `script.js`: sticky nav, scroll reveals, hero console demo, Kea conversation,
+  module rail, counters, hero title cursor effect
 
 ## Running locally
 
@@ -29,16 +30,33 @@ Live domain: **tucanolabs.net**. Contact: **info@tucanolabs.net**.
 
 ## Brand
 
-- **Primary**: `#FF6B1A` (Tucano orange)
-- **Accent**: `#FFB627` (yellow), `#00B4A6` (teal)
-- **Ink**: `#0F1420`
-- **Display type**: Plus Jakarta Sans
+Palette taken from the toucan in the logo. The orange is the beak only, so it
+stays in the mark and out of the interface.
+
+- **Primary**: `#048F92` (toucan teal)
+- **Deep**: `#1D346F` (toucan navy), `#111F45`
+- **Highlight**: `#14B8B3` (teal on dark), `#FFCC2E` (beak yellow, rare)
+- **Ink**: `#0A1020` (cool near-black)
+- **Display type**: Space Grotesk
 - **Body type**: Inter
+
+Small text meets WCAG AA on white: `--teal-text` 6.05:1, `--muted` 4.97:1.
 
 ## Sections
 
-1. Hero: *Precision Engineering. Data-Driven Growth.*
-2. The Four Pillars: Software / Data / Cloud / Operational Tech
-3. Founder-Led Advantage: Bruno & Danilo
-4. The Tucano Spirit: Brazilian heritage meets NZ reliability
-5. CTA: Book a Strategic Consultation
+1. Hero: *Run your whole business on one AI-powered platform* — full-bleed, with
+   an interactive Tucano Nest console that cycles through its modules on its own
+2. Inside Tucano Nest: continuous ticker
+3. Product: ERP / CRM / BI / Kea, on a sticky rail that follows the scroll
+4. Kea: a conversation that types itself and loops through three scripts
+5. Solutions & Services
+6. Founders: Bruno & Danilo
+7. The Tucano Spirit
+8. CTA, Index, footer
+
+## Motion
+
+Everything that moves on its own can be paused, and `prefers-reduced-motion`
+disables the lot. Scroll reveals are progressive enhancement: the resting
+(hidden) state only applies once JS confirms it will reveal, so with JS off or
+blocked the page renders in full.

@@ -19,14 +19,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Load fonts without blocking first paint; system fonts show until ready -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
       media="print"
       onload="this.media='all'"
     />
+    <script>
+      // marca antes da pintura: sem JS nada fica escondido
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("js-reveal");
+      }
+    </script>
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet"
       />
     </noscript>
@@ -80,18 +86,22 @@
               "addressLocality": "Auckland",
               "addressCountry": "NZ"
             },
+            "areaServed": [
+              { "@type": "Country", "name": "New Zealand" },
+              { "@type": "Country", "name": "Australia" },
+              { "@type": "Country", "name": "Brazil" },
+              { "@type": "Country", "name": "United States" }
+            ],
             "founder": [
               {
                 "@type": "Person",
                 "name": "Bruno Santos",
-                "jobTitle": "Co-Founder & CTO",
-                "sameAs": "https://www.linkedin.com/in/bruno-rodrigues-santos-739b7030/"
+                "jobTitle": "Co-Founder & Managing Director"
               },
               {
                 "@type": "Person",
                 "name": "Danilo Albertini",
-                "jobTitle": "Co-Founder & CEO",
-                "sameAs": "https://www.linkedin.com/in/danilo-albertini-silva/"
+                "jobTitle": "Co-Founder & Managing Director"
               }
             ]
           },
@@ -152,9 +162,669 @@
     <main id="top">
       <section class="hero">
         <div class="hero__bg" aria-hidden="true">
-          <div class="hero__blob hero__blob--orange"></div>
+          <div class="hero__blob hero__blob--navy"></div>
           <div class="hero__blob hero__blob--teal"></div>
           <div class="hero__grid"></div>
+          <div class="codefall">
+            <pre class="codefall__col codefall__col--0">POST /v1/kea/query
+{ "ask": "overdue invoices" }
+→ 200 OK · 142ms
+ 
+SELECT invoice_id, amount, due_date
+FROM finance.invoices
+WHERE status = 'overdue'
+→ 3 rows · $12,480
+ 
+kea.draft(followup, rows=3)
+→ queued for approval
+ 
+module erp.finance     ready
+module crm.pipeline    ready
+module bi.dashboards   ready
+module kea.assistant   ready
+ 
+POST /v1/kea/query
+{ "ask": "overdue invoices" }
+→ 200 OK · 142ms
+ 
+SELECT invoice_id, amount, due_date
+FROM finance.invoices
+WHERE status = 'overdue'
+→ 3 rows · $12,480
+ 
+kea.draft(followup, rows=3)
+→ queued for approval
+ 
+module erp.finance     ready
+module crm.pipeline    ready
+module bi.dashboards   ready
+module kea.assistant   ready
+ 
+POST /v1/kea/query
+{ "ask": "overdue invoices" }
+→ 200 OK · 142ms
+ 
+SELECT invoice_id, amount, due_date
+FROM finance.invoices
+WHERE status = 'overdue'
+→ 3 rows · $12,480
+ 
+kea.draft(followup, rows=3)
+→ queued for approval
+ 
+module erp.finance     ready
+module crm.pipeline    ready
+module bi.dashboards   ready
+module kea.assistant   ready
+ 
+POST /v1/kea/query
+{ "ask": "overdue invoices" }
+→ 200 OK · 142ms
+ 
+SELECT invoice_id, amount, due_date
+FROM finance.invoices
+WHERE status = 'overdue'
+→ 3 rows · $12,480
+ 
+kea.draft(followup, rows=3)
+→ queued for approval
+ 
+module erp.finance     ready
+module crm.pipeline    ready
+module bi.dashboards   ready
+module kea.assistant   ready
+ 
+POST /v1/kea/query
+{ "ask": "overdue invoices" }
+→ 200 OK · 142ms
+ 
+SELECT invoice_id, amount, due_date
+FROM finance.invoices
+WHERE status = 'overdue'
+→ 3 rows · $12,480
+ 
+kea.draft(followup, rows=3)
+→ queued for approval
+ 
+module erp.finance     ready
+module crm.pipeline    ready
+module bi.dashboards   ready
+module kea.assistant   ready
+ 
+POST /v1/kea/query
+{ "ask": "overdue invoices" }
+→ 200 OK · 142ms
+ 
+SELECT invoice_id, amount, due_date
+FROM finance.invoices
+WHERE status = 'overdue'
+→ 3 rows · $12,480
+ 
+kea.draft(followup, rows=3)
+→ queued for approval
+ 
+module erp.finance     ready
+module crm.pipeline    ready
+module bi.dashboards   ready
+module kea.assistant   ready
+ 
+POST /v1/kea/query
+{ "ask": "overdue invoices" }
+→ 200 OK · 142ms
+ 
+SELECT invoice_id, amount, due_date
+FROM finance.invoices
+WHERE status = 'overdue'
+→ 3 rows · $12,480
+ 
+kea.draft(followup, rows=3)
+→ queued for approval
+ 
+module erp.finance     ready
+module crm.pipeline    ready
+module bi.dashboards   ready
+module kea.assistant   ready
+ 
+POST /v1/kea/query
+{ "ask": "overdue invoices" }
+→ 200 OK · 142ms
+ 
+SELECT invoice_id, amount, due_date
+FROM finance.invoices
+WHERE status = 'overdue'
+→ 3 rows · $12,480
+ 
+kea.draft(followup, rows=3)
+→ queued for approval
+ 
+module erp.finance     ready
+module crm.pipeline    ready
+module bi.dashboards   ready
+module kea.assistant   ready
+ 
+POST /v1/kea/query
+{ "ask": "overdue invoices" }
+→ 200 OK · 142ms
+ 
+SELECT invoice_id, amount, due_date
+FROM finance.invoices
+WHERE status = 'overdue'
+→ 3 rows · $12,480
+ 
+kea.draft(followup, rows=3)
+→ queued for approval
+ 
+module erp.finance     ready
+module crm.pipeline    ready
+module bi.dashboards   ready
+module kea.assistant   ready
+ 
+POST /v1/kea/query
+{ "ask": "overdue invoices" }
+→ 200 OK · 142ms
+ 
+SELECT invoice_id, amount, due_date
+FROM finance.invoices
+WHERE status = 'overdue'
+→ 3 rows · $12,480
+ 
+kea.draft(followup, rows=3)
+→ queued for approval
+ 
+module erp.finance     ready
+module crm.pipeline    ready
+module bi.dashboards   ready
+module kea.assistant   ready
+ 
+POST /v1/kea/query
+{ "ask": "overdue invoices" }
+→ 200 OK · 142ms
+ 
+SELECT invoice_id, amount, due_date
+FROM finance.invoices
+WHERE status = 'overdue'
+→ 3 rows · $12,480
+ 
+kea.draft(followup, rows=3)
+→ queued for approval
+ 
+module erp.finance     ready
+module crm.pipeline    ready
+module bi.dashboards   ready
+module kea.assistant   ready
+ 
+POST /v1/kea/query
+{ "ask": "overdue invoices" }
+→ 200 OK · 142ms
+ 
+SELECT invoice_id, amount, due_date
+FROM finance.invoices
+WHERE status = 'overdue'
+→ 3 rows · $12,480
+ 
+kea.draft(followup, rows=3)
+→ queued for approval
+ 
+module erp.finance     ready
+module crm.pipeline    ready
+module bi.dashboards   ready
+module kea.assistant   ready
+ 
+POST /v1/kea/query
+{ "ask": "overdue invoices" }
+→ 200 OK · 142ms
+ 
+SELECT invoice_id, amount, due_date
+FROM finance.invoices
+WHERE status = 'overdue'
+→ 3 rows · $12,480
+ 
+kea.draft(followup, rows=3)
+→ queued for approval
+ 
+module erp.finance     ready
+module crm.pipeline    ready
+module bi.dashboards   ready
+module kea.assistant   ready
+ 
+POST /v1/kea/query
+{ "ask": "overdue invoices" }
+→ 200 OK · 142ms
+ 
+SELECT invoice_id, amount, due_date
+FROM finance.invoices
+WHERE status = 'overdue'
+→ 3 rows · $12,480
+ 
+kea.draft(followup, rows=3)
+→ queued for approval
+ 
+module erp.finance     ready
+module crm.pipeline    ready
+module bi.dashboards   ready
+module kea.assistant   ready
+ </pre>
+            <pre class="codefall__col codefall__col--1">nest.sync(source='xero')
+→ 214 transactions
+→ 209 matched automatically
+→ 5 flagged for review
+ 
+forecast('revenue', horizon='90d')
+→ confidence 0.87
+ 
+SELECT region, SUM(total) AS revenue
+FROM sales.orders
+GROUP BY region
+ORDER BY revenue DESC
+ 
+auth: scoped to tenant
+region: australasia-1
+ 
+nest.sync(source='xero')
+→ 214 transactions
+→ 209 matched automatically
+→ 5 flagged for review
+ 
+forecast('revenue', horizon='90d')
+→ confidence 0.87
+ 
+SELECT region, SUM(total) AS revenue
+FROM sales.orders
+GROUP BY region
+ORDER BY revenue DESC
+ 
+auth: scoped to tenant
+region: australasia-1
+ 
+nest.sync(source='xero')
+→ 214 transactions
+→ 209 matched automatically
+→ 5 flagged for review
+ 
+forecast('revenue', horizon='90d')
+→ confidence 0.87
+ 
+SELECT region, SUM(total) AS revenue
+FROM sales.orders
+GROUP BY region
+ORDER BY revenue DESC
+ 
+auth: scoped to tenant
+region: australasia-1
+ 
+nest.sync(source='xero')
+→ 214 transactions
+→ 209 matched automatically
+→ 5 flagged for review
+ 
+forecast('revenue', horizon='90d')
+→ confidence 0.87
+ 
+SELECT region, SUM(total) AS revenue
+FROM sales.orders
+GROUP BY region
+ORDER BY revenue DESC
+ 
+auth: scoped to tenant
+region: australasia-1
+ 
+nest.sync(source='xero')
+→ 214 transactions
+→ 209 matched automatically
+→ 5 flagged for review
+ 
+forecast('revenue', horizon='90d')
+→ confidence 0.87
+ 
+SELECT region, SUM(total) AS revenue
+FROM sales.orders
+GROUP BY region
+ORDER BY revenue DESC
+ 
+auth: scoped to tenant
+region: australasia-1
+ 
+nest.sync(source='xero')
+→ 214 transactions
+→ 209 matched automatically
+→ 5 flagged for review
+ 
+forecast('revenue', horizon='90d')
+→ confidence 0.87
+ 
+SELECT region, SUM(total) AS revenue
+FROM sales.orders
+GROUP BY region
+ORDER BY revenue DESC
+ 
+auth: scoped to tenant
+region: australasia-1
+ 
+nest.sync(source='xero')
+→ 214 transactions
+→ 209 matched automatically
+→ 5 flagged for review
+ 
+forecast('revenue', horizon='90d')
+→ confidence 0.87
+ 
+SELECT region, SUM(total) AS revenue
+FROM sales.orders
+GROUP BY region
+ORDER BY revenue DESC
+ 
+auth: scoped to tenant
+region: australasia-1
+ 
+nest.sync(source='xero')
+→ 214 transactions
+→ 209 matched automatically
+→ 5 flagged for review
+ 
+forecast('revenue', horizon='90d')
+→ confidence 0.87
+ 
+SELECT region, SUM(total) AS revenue
+FROM sales.orders
+GROUP BY region
+ORDER BY revenue DESC
+ 
+auth: scoped to tenant
+region: australasia-1
+ 
+nest.sync(source='xero')
+→ 214 transactions
+→ 209 matched automatically
+→ 5 flagged for review
+ 
+forecast('revenue', horizon='90d')
+→ confidence 0.87
+ 
+SELECT region, SUM(total) AS revenue
+FROM sales.orders
+GROUP BY region
+ORDER BY revenue DESC
+ 
+auth: scoped to tenant
+region: australasia-1
+ 
+nest.sync(source='xero')
+→ 214 transactions
+→ 209 matched automatically
+→ 5 flagged for review
+ 
+forecast('revenue', horizon='90d')
+→ confidence 0.87
+ 
+SELECT region, SUM(total) AS revenue
+FROM sales.orders
+GROUP BY region
+ORDER BY revenue DESC
+ 
+auth: scoped to tenant
+region: australasia-1
+ 
+nest.sync(source='xero')
+→ 214 transactions
+→ 209 matched automatically
+→ 5 flagged for review
+ 
+forecast('revenue', horizon='90d')
+→ confidence 0.87
+ 
+SELECT region, SUM(total) AS revenue
+FROM sales.orders
+GROUP BY region
+ORDER BY revenue DESC
+ 
+auth: scoped to tenant
+region: australasia-1
+ 
+nest.sync(source='xero')
+→ 214 transactions
+→ 209 matched automatically
+→ 5 flagged for review
+ 
+forecast('revenue', horizon='90d')
+→ confidence 0.87
+ 
+SELECT region, SUM(total) AS revenue
+FROM sales.orders
+GROUP BY region
+ORDER BY revenue DESC
+ 
+auth: scoped to tenant
+region: australasia-1
+ 
+nest.sync(source='xero')
+→ 214 transactions
+→ 209 matched automatically
+→ 5 flagged for review
+ 
+forecast('revenue', horizon='90d')
+→ confidence 0.87
+ 
+SELECT region, SUM(total) AS revenue
+FROM sales.orders
+GROUP BY region
+ORDER BY revenue DESC
+ 
+auth: scoped to tenant
+region: australasia-1
+ 
+nest.sync(source='xero')
+→ 214 transactions
+→ 209 matched automatically
+→ 5 flagged for review
+ 
+forecast('revenue', horizon='90d')
+→ confidence 0.87
+ 
+SELECT region, SUM(total) AS revenue
+FROM sales.orders
+GROUP BY region
+ORDER BY revenue DESC
+ 
+auth: scoped to tenant
+region: australasia-1
+ </pre>
+            <pre class="codefall__col codefall__col--2">GET /v1/bi/dashboards/live
+→ streaming 8 widgets
+ 
+on(stock.level < reorder_point)
+  kea.propose(purchase_order)
+→ awaiting approval
+ 
+deploy: cloud-run · rev 412
+health: ok  latency: 38ms
+uptime: 99.98%
+ 
+kea.explain('margin dip Q2')
+→ freight +1.1pt
+ 
+GET /v1/bi/dashboards/live
+→ streaming 8 widgets
+ 
+on(stock.level < reorder_point)
+  kea.propose(purchase_order)
+→ awaiting approval
+ 
+deploy: cloud-run · rev 412
+health: ok  latency: 38ms
+uptime: 99.98%
+ 
+kea.explain('margin dip Q2')
+→ freight +1.1pt
+ 
+GET /v1/bi/dashboards/live
+→ streaming 8 widgets
+ 
+on(stock.level < reorder_point)
+  kea.propose(purchase_order)
+→ awaiting approval
+ 
+deploy: cloud-run · rev 412
+health: ok  latency: 38ms
+uptime: 99.98%
+ 
+kea.explain('margin dip Q2')
+→ freight +1.1pt
+ 
+GET /v1/bi/dashboards/live
+→ streaming 8 widgets
+ 
+on(stock.level < reorder_point)
+  kea.propose(purchase_order)
+→ awaiting approval
+ 
+deploy: cloud-run · rev 412
+health: ok  latency: 38ms
+uptime: 99.98%
+ 
+kea.explain('margin dip Q2')
+→ freight +1.1pt
+ 
+GET /v1/bi/dashboards/live
+→ streaming 8 widgets
+ 
+on(stock.level < reorder_point)
+  kea.propose(purchase_order)
+→ awaiting approval
+ 
+deploy: cloud-run · rev 412
+health: ok  latency: 38ms
+uptime: 99.98%
+ 
+kea.explain('margin dip Q2')
+→ freight +1.1pt
+ 
+GET /v1/bi/dashboards/live
+→ streaming 8 widgets
+ 
+on(stock.level < reorder_point)
+  kea.propose(purchase_order)
+→ awaiting approval
+ 
+deploy: cloud-run · rev 412
+health: ok  latency: 38ms
+uptime: 99.98%
+ 
+kea.explain('margin dip Q2')
+→ freight +1.1pt
+ 
+GET /v1/bi/dashboards/live
+→ streaming 8 widgets
+ 
+on(stock.level < reorder_point)
+  kea.propose(purchase_order)
+→ awaiting approval
+ 
+deploy: cloud-run · rev 412
+health: ok  latency: 38ms
+uptime: 99.98%
+ 
+kea.explain('margin dip Q2')
+→ freight +1.1pt
+ 
+GET /v1/bi/dashboards/live
+→ streaming 8 widgets
+ 
+on(stock.level < reorder_point)
+  kea.propose(purchase_order)
+→ awaiting approval
+ 
+deploy: cloud-run · rev 412
+health: ok  latency: 38ms
+uptime: 99.98%
+ 
+kea.explain('margin dip Q2')
+→ freight +1.1pt
+ 
+GET /v1/bi/dashboards/live
+→ streaming 8 widgets
+ 
+on(stock.level < reorder_point)
+  kea.propose(purchase_order)
+→ awaiting approval
+ 
+deploy: cloud-run · rev 412
+health: ok  latency: 38ms
+uptime: 99.98%
+ 
+kea.explain('margin dip Q2')
+→ freight +1.1pt
+ 
+GET /v1/bi/dashboards/live
+→ streaming 8 widgets
+ 
+on(stock.level < reorder_point)
+  kea.propose(purchase_order)
+→ awaiting approval
+ 
+deploy: cloud-run · rev 412
+health: ok  latency: 38ms
+uptime: 99.98%
+ 
+kea.explain('margin dip Q2')
+→ freight +1.1pt
+ 
+GET /v1/bi/dashboards/live
+→ streaming 8 widgets
+ 
+on(stock.level < reorder_point)
+  kea.propose(purchase_order)
+→ awaiting approval
+ 
+deploy: cloud-run · rev 412
+health: ok  latency: 38ms
+uptime: 99.98%
+ 
+kea.explain('margin dip Q2')
+→ freight +1.1pt
+ 
+GET /v1/bi/dashboards/live
+→ streaming 8 widgets
+ 
+on(stock.level < reorder_point)
+  kea.propose(purchase_order)
+→ awaiting approval
+ 
+deploy: cloud-run · rev 412
+health: ok  latency: 38ms
+uptime: 99.98%
+ 
+kea.explain('margin dip Q2')
+→ freight +1.1pt
+ 
+GET /v1/bi/dashboards/live
+→ streaming 8 widgets
+ 
+on(stock.level < reorder_point)
+  kea.propose(purchase_order)
+→ awaiting approval
+ 
+deploy: cloud-run · rev 412
+health: ok  latency: 38ms
+uptime: 99.98%
+ 
+kea.explain('margin dip Q2')
+→ freight +1.1pt
+ 
+GET /v1/bi/dashboards/live
+→ streaming 8 widgets
+ 
+on(stock.level < reorder_point)
+  kea.propose(purchase_order)
+→ awaiting approval
+ 
+deploy: cloud-run · rev 412
+health: ok  latency: 38ms
+uptime: 99.98%
+ 
+kea.explain('margin dip Q2')
+→ freight +1.1pt
+ </pre>
+          </div>
         </div>
 
         <div class="container hero__inner">
@@ -164,9 +834,10 @@
               AI-powered business platform · Built in New Zealand
             </span>
 
-            <h1 class="hero__title">
-              Run your whole business on
-              <span class="grad">one AI-powered platform.</span>
+            <h1 class="hero__title" aria-label="Run your whole business on one AI-powered platform.">
+              <span class="rl"><span class="rl__i">Run your whole</span></span>
+              <span class="rl"><span class="rl__i">business on</span></span>
+              <span class="rl"><span class="rl__i grad">one AI-powered platform.</span></span>
             </h1>
 
             <p class="hero__sub">
@@ -191,10 +862,137 @@
               </a>
               <a href="#product" class="btn btn--ghost btn--lg">Explore the Platform</a>
             </div>
+          </div>
+        </div>
 
+        <div class="hero__stage">
+          <div class="console" data-console>
+            <div class="console__chrome">
+              <span class="dot dot--teal"></span>
+              <span class="dot dot--navy"></span>
+              <span class="dot"></span>
+              <span class="console__url">app.tucanolabs.net · Tucano Nest</span>
+              <span class="console__live"><span class="console__pulse"></span>Live demo</span>
+              <button type="button" class="console__toggle" data-toggle aria-label="Pause the demo">
+                <svg viewBox="0 0 16 16" aria-hidden="true" class="ico-pause"><rect x="4" y="3" width="3" height="10" rx="1"/><rect x="9" y="3" width="3" height="10" rx="1"/></svg>
+                <svg viewBox="0 0 16 16" aria-hidden="true" class="ico-play"><path d="M5 3.5v9l8-4.5-8-4.5Z"/></svg>
+              </button>
+            </div>
+            <div class="console__progress" aria-hidden="true"><span data-progress></span></div>
+
+            <div class="console__body">
+              <div class="console__side" role="tablist" aria-label="Tucano Nest modules">
+                <button type="button" role="tab" id="t-dash" aria-controls="p-dash" aria-selected="true" class="console__nav is-on">Dashboard</button>
+                <button type="button" role="tab" id="t-sales" aria-controls="p-sales" aria-selected="false" tabindex="-1" class="console__nav">Sales</button>
+                <button type="button" role="tab" id="t-inv" aria-controls="p-inv" aria-selected="false" tabindex="-1" class="console__nav">Invoices</button>
+                <button type="button" role="tab" id="t-bi" aria-controls="p-bi" aria-selected="false" tabindex="-1" class="console__nav">Reports</button>
+                <button type="button" role="tab" id="t-kea" aria-controls="p-kea" aria-selected="false" tabindex="-1" class="console__nav console__nav--kea">Ask Kea</button>
+              </div>
+
+              <div class="console__main">
+                <section class="console__panel is-on" id="p-dash" role="tabpanel" aria-labelledby="t-dash">
+                  <div class="shot__kpis">
+                    <div class="shot__kpi">
+                      <span class="shot__kpi-label">Revenue (MTD)</span>
+                      <span class="shot__kpi-num" data-count="248.6" data-prefix="$" data-suffix="k" data-dec="1">$248.6k</span>
+                      <span class="shot__kpi-delta">▲ 12.4%</span>
+                    </div>
+                    <div class="shot__kpi">
+                      <span class="shot__kpi-label">Open Deals</span>
+                      <span class="shot__kpi-num" data-count="47">47</span>
+                      <span class="shot__kpi-delta">▲ 8 this week</span>
+                    </div>
+                    <div class="shot__kpi">
+                      <span class="shot__kpi-label">Overdue Invoices</span>
+                      <span class="shot__kpi-num" data-count="3">3</span>
+                      <span class="shot__kpi-delta shot__kpi-delta--warn">Kea is following up</span>
+                    </div>
+                  </div>
+                  <div class="shot__chart">
+                    <div class="bars bars--shot">
+                      <span style="--h: 38%"></span>
+                      <span style="--h: 52%"></span>
+                      <span style="--h: 46%"></span>
+                      <span style="--h: 64%"></span>
+                      <span style="--h: 58%"></span>
+                      <span style="--h: 76%"></span>
+                      <span style="--h: 70%"></span>
+                      <span style="--h: 92%"></span>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="console__panel" id="p-sales" role="tabpanel" aria-labelledby="t-sales" hidden>
+                  <div class="console__head">
+                    <span class="console__title">Sales Pipeline</span>
+                    <span class="console__meta">Last 4 quarters</span>
+                  </div>
+                  <div class="console__metric">
+                    <span class="console__big" data-count="38.4" data-prefix="+" data-suffix="%" data-dec="1">+38.4%</span>
+                    <span class="console__delta">QoQ growth</span>
+                  </div>
+                  <svg class="spark" viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="sparkFill2" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" stop-color="#048F92" stop-opacity="0.35" />
+                        <stop offset="100%" stop-color="#048F92" stop-opacity="0" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M0 45 L20 40 L40 42 L60 30 L80 33 L100 22 L120 26 L140 14 L160 18 L180 8 L200 12 L200 60 L0 60 Z" fill="url(#sparkFill2)" />
+                    <path class="spark__line" d="M0 45 L20 40 L40 42 L60 30 L80 33 L100 22 L120 26 L140 14 L160 18 L180 8 L200 12" stroke="#048F92" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </section>
+
+                <section class="console__panel" id="p-inv" role="tabpanel" aria-labelledby="t-inv" hidden>
+                  <div class="console__head">
+                    <span class="console__title">Invoices</span>
+                    <span class="console__meta">3 overdue</span>
+                  </div>
+                  <ul class="rows">
+                    <li class="rows__r"><span>Kahu Logistics</span><span>$4,820</span><span class="rows__tag rows__tag--warn">Overdue 12d</span></li>
+                    <li class="rows__r"><span>Rimu Foods</span><span>$3,140</span><span class="rows__tag rows__tag--warn">Overdue 5d</span></li>
+                    <li class="rows__r"><span>Hoki Marine</span><span>$4,520</span><span class="rows__tag rows__tag--warn">Overdue 2d</span></li>
+                    <li class="rows__r"><span>Tui Software</span><span>$9,300</span><span class="rows__tag">Paid</span></li>
+                    <li class="rows__r"><span>Weka Retail</span><span>$2,780</span><span class="rows__tag">Paid</span></li>
+                  </ul>
+                </section>
+
+                <section class="console__panel" id="p-bi" role="tabpanel" aria-labelledby="t-bi" hidden>
+                  <div class="console__head">
+                    <span class="console__title">Revenue by month</span>
+                    <span class="console__meta">Live</span>
+                  </div>
+                  <div class="bars bars--shot">
+                    <span style="--h: 42%"></span>
+                    <span style="--h: 61%"></span>
+                    <span style="--h: 48%"></span>
+                    <span style="--h: 73%"></span>
+                    <span style="--h: 66%"></span>
+                    <span style="--h: 88%"></span>
+                    <span style="--h: 79%"></span>
+                    <span style="--h: 96%"></span>
+                  </div>
+                </section>
+
+                <section class="console__panel console__panel--kea" id="p-kea" role="tabpanel" aria-labelledby="t-kea" hidden>
+                  <div class="console__head">
+                    <span class="console__title">Kea · AI Assistant</span>
+                    <span class="console__meta">LLM over your own data</span>
+                  </div>
+                  <div class="kea-chat">
+                    <p class="kea-chat__msg kea-chat__msg--user">Which invoices are overdue this month?</p>
+                    <p class="kea-chat__msg kea-chat__msg--kea" data-type="3 invoices totalling $12,480 are overdue. Want me to draft the follow-up emails?"></p>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
             <div class="hero__proof">
               <div class="proof">
-                <span class="proof__num">1</span>
+                <span class="proof__num" data-count="1">1</span>
                 <span class="proof__label">Platform for ERP, CRM &amp; BI</span>
               </div>
               <div class="proof">
@@ -206,85 +1004,33 @@
                 <span class="proof__label">Live with early-access customers</span>
               </div>
             </div>
-          </div>
-
-          <div class="hero__art" aria-hidden="true">
-            <div class="card card--floating card--metric">
-              <div class="card__top">
-                <span class="dot dot--teal"></span>
-                <span class="card__title">Nest · Sales Pipeline</span>
-              </div>
-              <div class="card__metric">
-                <span class="card__big">+38.4%</span>
-                <span class="card__delta">QoQ growth</span>
-              </div>
-              <svg class="spark" viewBox="0 0 200 60" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="sparkFill" x1="0" x2="0" y1="0" y2="1">
-                    <stop offset="0%" stop-color="#FF6B1A" stop-opacity="0.35" />
-                    <stop offset="100%" stop-color="#FF6B1A" stop-opacity="0" />
-                  </linearGradient>
-                </defs>
-                <path
-                  d="M0 45 L20 40 L40 42 L60 30 L80 33 L100 22 L120 26 L140 14 L160 18 L180 8 L200 12 L200 60 L0 60 Z"
-                  fill="url(#sparkFill)"
-                />
-                <path
-                  d="M0 45 L20 40 L40 42 L60 30 L80 33 L100 22 L120 26 L140 14 L160 18 L180 8 L200 12"
-                  stroke="#FF6B1A"
-                  stroke-width="2.2"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-
-            <div class="card card--floating card--code card--kea">
-              <div class="card__top">
-                <span class="dot dot--orange"></span>
-                <span class="card__title">Kea · AI Assistant</span>
-              </div>
-              <div class="kea-chat">
-                <p class="kea-chat__msg kea-chat__msg--user">
-                  Which invoices are overdue this month?
-                </p>
-                <p class="kea-chat__msg kea-chat__msg--kea">
-                  3 invoices totalling $12,480 are overdue. Want me to draft the
-                  follow-up emails?
-                </p>
-              </div>
-            </div>
-
-            <div class="card card--floating card--bi">
-              <div class="card__top">
-                <span class="dot dot--yellow"></span>
-                <span class="card__title">Nest BI · Live</span>
-              </div>
-              <div class="bars">
-                <span style="--h: 45%"></span>
-                <span style="--h: 70%"></span>
-                <span style="--h: 55%"></span>
-                <span style="--h: 88%"></span>
-                <span style="--h: 62%"></span>
-                <span style="--h: 95%"></span>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
       <!-- ============ TRUST STRIP ============ -->
       <section class="strip" aria-label="Inside the platform">
-        <div class="container strip__inner">
+        <div class="strip__inner">
           <span class="strip__label">Inside Tucano Nest</span>
-          <ul class="strip__list">
-            <li>Finance &amp; Operations ERP</li>
-            <li>Sales &amp; Customer CRM</li>
-            <li>Real-Time BI Dashboards</li>
-            <li>Kea AI Assistant</li>
-            <li>Cloud-Native on Google Cloud</li>
-          </ul>
+          <div class="tick" data-tick>
+            <ul class="tick__row">
+              <li class="tick__item">Finance &amp; Operations ERP</li>
+              <li class="tick__item">Sales &amp; Customer CRM</li>
+              <li class="tick__item">Real-Time BI Dashboards</li>
+              <li class="tick__item">Kea AI Assistant</li>
+              <li class="tick__item">Cloud-Native on Google Cloud</li>
+              <li class="tick__item">Secure by design</li>
+              <li class="tick__item">Built in Aotearoa New Zealand</li>
+            </ul>
+            <ul class="tick__row" aria-hidden="true">
+              <li class="tick__item">Finance &amp; Operations ERP</li>
+              <li class="tick__item">Sales &amp; Customer CRM</li>
+              <li class="tick__item">Real-Time BI Dashboards</li>
+              <li class="tick__item">Kea AI Assistant</li>
+              <li class="tick__item">Cloud-Native on Google Cloud</li>
+              <li class="tick__item">Secure by design</li>
+              <li class="tick__item">Built in Aotearoa New Zealand</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -306,155 +1052,135 @@
           </div>
 
           <!-- Product preview -->
-          <div class="shot" role="img" aria-label="Preview of the Tucano Nest dashboard: navigation sidebar, key business metrics and revenue chart">
-            <div class="shot__chrome">
-              <span class="dot dot--orange"></span>
-              <span class="dot dot--yellow"></span>
-              <span class="dot dot--teal"></span>
-              <span class="shot__url">app.tucanolabs.net · Tucano Nest</span>
-            </div>
-            <div class="shot__body">
-              <div class="shot__side">
-                <span class="shot__navitem shot__navitem--on">Dashboard</span>
-                <span class="shot__navitem">Sales</span>
-                <span class="shot__navitem">Invoices</span>
-                <span class="shot__navitem">Inventory</span>
-                <span class="shot__navitem">Reports</span>
-                <span class="shot__navitem shot__navitem--kea">Ask Kea</span>
-              </div>
-              <div class="shot__main">
-                <div class="shot__kpis">
-                  <div class="shot__kpi">
-                    <span class="shot__kpi-label">Revenue (MTD)</span>
-                    <span class="shot__kpi-num">$248.6k</span>
-                    <span class="shot__kpi-delta">▲ 12.4%</span>
-                  </div>
-                  <div class="shot__kpi">
-                    <span class="shot__kpi-label">Open Deals</span>
-                    <span class="shot__kpi-num">47</span>
-                    <span class="shot__kpi-delta">▲ 8 this week</span>
-                  </div>
-                  <div class="shot__kpi">
-                    <span class="shot__kpi-label">Overdue Invoices</span>
-                    <span class="shot__kpi-num">3</span>
-                    <span class="shot__kpi-delta shot__kpi-delta--warn">Kea is following up</span>
-                  </div>
+
+          <div class="modules" data-modules>
+            <ol class="modules__rail" aria-label="Platform modules">
+              <li class="rail__item is-active" data-rail="0">
+                <a href="#mod-0">
+                  <span class="rail__num">01</span>
+                  <span class="rail__name">ERP</span>
+                  <span class="rail__desc">Finance & Operations</span>
+                </a>
+              </li>
+              <li class="rail__item" data-rail="1">
+                <a href="#mod-1">
+                  <span class="rail__num">02</span>
+                  <span class="rail__name">CRM</span>
+                  <span class="rail__desc">Sales & Customers</span>
+                </a>
+              </li>
+              <li class="rail__item" data-rail="2">
+                <a href="#mod-2">
+                  <span class="rail__num">03</span>
+                  <span class="rail__name">BI</span>
+                  <span class="rail__desc">Insights & Reporting</span>
+                </a>
+              </li>
+              <li class="rail__item" data-rail="3">
+                <a href="#mod-3">
+                  <span class="rail__num">04</span>
+                  <span class="rail__name">Kea</span>
+                  <span class="rail__desc">AI That Does the Work</span>
+                </a>
+              </li>
+            </ol>
+            <div class="modules__panels">
+              <article class="pillar" id="mod-0" data-panel="0">
+                <div class="pillar__icon" style="--c: #048F92">
+                  <svg viewBox="0 0 28 28" aria-hidden="true">
+                    <path
+                      d="M4 8h20v14H4zM4 8l3-4h14l3 4M11 13h6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      fill="none"
+                    />
+                  </svg>
                 </div>
-                <div class="shot__chart">
-                  <div class="bars bars--shot">
-                    <span style="--h: 38%"></span>
-                    <span style="--h: 52%"></span>
-                    <span style="--h: 46%"></span>
-                    <span style="--h: 64%"></span>
-                    <span style="--h: 58%"></span>
-                    <span style="--h: 76%"></span>
-                    <span style="--h: 70%"></span>
-                    <span style="--h: 92%"></span>
-                  </div>
+                <h3 class="pillar__title">ERP · Finance &amp; Operations</h3>
+                <p class="pillar__copy">
+                  Invoicing, purchasing, inventory and cash flow in one place, with AI
+                  keeping the books tidy and flagging what needs attention.
+                </p>
+                <ul class="pillar__list">
+                  <li>Invoicing &amp; payments tracking</li>
+                  <li>Inventory &amp; purchasing</li>
+                  <li>AI-assisted reconciliation &amp; alerts</li>
+                </ul>
+              </article>
+              <article class="pillar" id="mod-1" data-panel="1">
+                <div class="pillar__icon" style="--c: #1D346F">
+                  <svg viewBox="0 0 28 28" aria-hidden="true">
+                    <path
+                      d="M14 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-8 11a8 8 0 0 1 16 0"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      fill="none"
+                    />
+                  </svg>
                 </div>
-              </div>
+                <h3 class="pillar__title">CRM · Sales &amp; Customers</h3>
+                <p class="pillar__copy">
+                  A pipeline that updates itself. Contacts, deals and quotes stay in sync
+                  with your invoices and stock, because it's all one system.
+                </p>
+                <ul class="pillar__list">
+                  <li>Pipeline &amp; deal management</li>
+                  <li>Contacts, quotes &amp; follow-ups</li>
+                  <li>AI-drafted emails &amp; next-step suggestions</li>
+                </ul>
+              </article>
+              <article class="pillar" id="mod-2" data-panel="2">
+                <div class="pillar__icon" style="--c: #14B8B3">
+                  <svg viewBox="0 0 28 28" aria-hidden="true">
+                    <path
+                      d="M4 22V10m6 12V4m6 18v-8m6 8v-14"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
+                <h3 class="pillar__title">BI · Insights &amp; Reporting</h3>
+                <p class="pillar__copy">
+                  Real-time dashboards and reports built from your live business data. Ask a
+                  question in plain English and get the chart, not a data export.
+                </p>
+                <ul class="pillar__list">
+                  <li>Live dashboards &amp; KPIs</li>
+                  <li>Natural-language reporting via Kea</li>
+                  <li>Forecasting &amp; trend detection</li>
+                </ul>
+              </article>
+              <article class="pillar" id="mod-3" data-panel="3">
+                <div class="pillar__icon" style="--c: #0A1020">
+                  <svg viewBox="0 0 28 28" aria-hidden="true">
+                    <path
+                      d="M14 3l2.6 5.7L22 11l-5.4 2.3L14 19l-2.6-5.7L6 11l5.4-2.3L14 3ZM22 18l1.3 2.7L26 22l-2.7 1.3L22 26l-1.3-2.7L18 22l2.7-1.3L22 18Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
+                <h3 class="pillar__title">Kea · AI That Does the Work</h3>
+                <p class="pillar__copy">
+                  Kea is an LLM-based assistant that works like a member of your team:
+                  answering questions, drafting documents and running routine workflows.
+                </p>
+                <ul class="pillar__list">
+                  <li>Plain-English questions over your data</li>
+                  <li>Automated routine workflows</li>
+                  <li>Drafts invoices, emails &amp; reports</li>
+                </ul>
+              </article>
             </div>
-          </div>
-
-          <div class="pillars">
-            <article class="pillar">
-              <div class="pillar__icon" style="--c: #FF6B1A">
-                <svg viewBox="0 0 28 28" aria-hidden="true">
-                  <path
-                    d="M4 8h20v14H4zM4 8l3-4h14l3 4M11 13h6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-              <h3 class="pillar__title">ERP · Finance &amp; Operations</h3>
-              <p class="pillar__copy">
-                Invoicing, purchasing, inventory and cash flow in one place, with AI
-                keeping the books tidy and flagging what needs attention.
-              </p>
-              <ul class="pillar__list">
-                <li>Invoicing &amp; payments tracking</li>
-                <li>Inventory &amp; purchasing</li>
-                <li>AI-assisted reconciliation &amp; alerts</li>
-              </ul>
-            </article>
-
-            <article class="pillar">
-              <div class="pillar__icon" style="--c: #FFB627">
-                <svg viewBox="0 0 28 28" aria-hidden="true">
-                  <path
-                    d="M14 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-8 11a8 8 0 0 1 16 0"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-              <h3 class="pillar__title">CRM · Sales &amp; Customers</h3>
-              <p class="pillar__copy">
-                A pipeline that updates itself. Contacts, deals and quotes stay in sync
-                with your invoices and stock, because it's all one system.
-              </p>
-              <ul class="pillar__list">
-                <li>Pipeline &amp; deal management</li>
-                <li>Contacts, quotes &amp; follow-ups</li>
-                <li>AI-drafted emails &amp; next-step suggestions</li>
-              </ul>
-            </article>
-
-            <article class="pillar">
-              <div class="pillar__icon" style="--c: #00B4A6">
-                <svg viewBox="0 0 28 28" aria-hidden="true">
-                  <path
-                    d="M4 22V10m6 12V4m6 18v-8m6 8v-14"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-              <h3 class="pillar__title">BI · Insights &amp; Reporting</h3>
-              <p class="pillar__copy">
-                Real-time dashboards and reports built from your live business data. Ask a
-                question in plain English and get the chart, not a data export.
-              </p>
-              <ul class="pillar__list">
-                <li>Live dashboards &amp; KPIs</li>
-                <li>Natural-language reporting via Kea</li>
-                <li>Forecasting &amp; trend detection</li>
-              </ul>
-            </article>
-
-            <article class="pillar">
-              <div class="pillar__icon" style="--c: #1A1F2E">
-                <svg viewBox="0 0 28 28" aria-hidden="true">
-                  <path
-                    d="M14 3l2.6 5.7L22 11l-5.4 2.3L14 19l-2.6-5.7L6 11l5.4-2.3L14 3ZM22 18l1.3 2.7L26 22l-2.7 1.3L22 26l-1.3-2.7L18 22l2.7-1.3L22 18Z"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-              <h3 class="pillar__title">Kea · AI That Does the Work</h3>
-              <p class="pillar__copy">
-                Kea is an LLM-based assistant that works like a member of your team:
-                answering questions, drafting documents and running routine workflows.
-              </p>
-              <ul class="pillar__list">
-                <li>Plain-English questions over your data</li>
-                <li>Automated routine workflows</li>
-                <li>Drafts invoices, emails &amp; reports</li>
-              </ul>
-            </article>
           </div>
 
           <!-- Development stage -->
@@ -557,7 +1283,11 @@
                 <span class="dot dot--teal"></span>
                 <span class="card__title">Kea · AI Assistant</span>
               </div>
-              <div class="kea-chat kea-chat--lg">
+              <button type="button" class="kea-demo__toggle" data-kea-toggle aria-label="Pause the conversation">
+                <svg viewBox="0 0 16 16" aria-hidden="true" class="ico-pause"><rect x="4" y="3" width="3" height="10" rx="1"/><rect x="9" y="3" width="3" height="10" rx="1"/></svg>
+                <svg viewBox="0 0 16 16" aria-hidden="true" class="ico-play"><path d="M5 3.5v9l8-4.5-8-4.5Z"/></svg>
+              </button>
+              <div class="kea-chat kea-chat--lg" data-kea-demo aria-live="polite">
                 <p class="kea-chat__msg kea-chat__msg--user">
                   How did the Auckland region perform last quarter?
                 </p>
@@ -597,7 +1327,7 @@
 
           <div class="pillars pillars--trio">
             <article class="pillar">
-              <div class="pillar__icon" style="--c: #FF6B1A">
+              <div class="pillar__icon" style="--c: #048F92">
                 <svg viewBox="0 0 28 28" aria-hidden="true">
                   <path
                     d="M10 4H5a1 1 0 0 0-1 1v5m14-6h5a1 1 0 0 1 1 1v5M10 24H5a1 1 0 0 1-1-1v-5m14 6h5a1 1 0 0 0 1-1v-5M9 14h10"
@@ -622,7 +1352,7 @@
             </article>
 
             <article class="pillar">
-              <div class="pillar__icon" style="--c: #00B4A6">
+              <div class="pillar__icon" style="--c: #14B8B3">
                 <svg viewBox="0 0 28 28" aria-hidden="true">
                   <path
                     d="M8 10a4 4 0 1 0 0 8h3m9-8a4 4 0 1 1 0 8h-3m-7-4h8"
@@ -647,7 +1377,7 @@
             </article>
 
             <article class="pillar">
-              <div class="pillar__icon" style="--c: #FFB627">
+              <div class="pillar__icon" style="--c: #1D346F">
                 <svg viewBox="0 0 28 28" aria-hidden="true">
                   <path
                     d="M14 4v10l6 4M14 24a10 10 0 1 1 0-20 10 10 0 0 1 0 20Z"
@@ -750,10 +1480,10 @@
             <article class="founder">
               <div class="founder__photo" aria-hidden="true">
                 <span class="founder__initials">BS</span>
-                <span class="founder__chip">CTO</span>
+                <span class="founder__chip">MD</span>
               </div>
               <h3 class="founder__name">Bruno Santos</h3>
-              <p class="founder__role">Co-Founder &amp; CTO</p>
+              <p class="founder__role">Co-Founder &amp; Managing Director</p>
               <p class="founder__bio">
                 17+ years engineering high-scale platforms across fintech, mobility and
                 SaaS, from startups to global enterprises. Bruno leads the architecture
@@ -764,24 +1494,15 @@
                 <li>Cloud-Native</li>
                 <li>Platform Engineering</li>
               </ul>
-              <a
-                class="linkbtn linkbtn--card"
-                href="https://www.linkedin.com/in/bruno-rodrigues-santos-739b7030/"
-                target="_blank"
-                rel="noopener"
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
-                LinkedIn Profile
-              </a>
             </article>
 
             <article class="founder">
               <div class="founder__photo founder__photo--alt" aria-hidden="true">
                 <span class="founder__initials">DA</span>
-                <span class="founder__chip">CEO</span>
+                <span class="founder__chip">MD</span>
               </div>
               <h3 class="founder__name">Danilo Albertini</h3>
-              <p class="founder__role">Co-Founder &amp; CEO</p>
+              <p class="founder__role">Co-Founder &amp; Managing Director</p>
               <p class="founder__bio">
                 16+ years in product, data science and BI, turning data into commercial
                 outcomes for enterprises worldwide. Danilo leads product, the data
@@ -792,15 +1513,6 @@
                 <li>Data Science</li>
                 <li>AI &amp; BI</li>
               </ul>
-              <a
-                class="linkbtn linkbtn--card"
-                href="https://www.linkedin.com/in/danilo-albertini-silva/"
-                target="_blank"
-                rel="noopener"
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
-                LinkedIn Profile
-              </a>
             </article>
           </div>
         </div>
@@ -836,9 +1548,9 @@
               We build a product that performs in production and feels good to use.
             </p>
             <div class="spirit__chips">
-              <span class="chip"><span class="chip__dot" style="--c:#FF6B1A"></span>Brazilian energy</span>
-              <span class="chip"><span class="chip__dot" style="--c:#1A1F2E"></span>Kiwi reliability</span>
-              <span class="chip"><span class="chip__dot" style="--c:#00B4A6"></span>Global craft</span>
+              <span class="chip"><span class="chip__dot" style="--c:#048F92"></span>Brazilian energy</span>
+              <span class="chip"><span class="chip__dot" style="--c:#0A1020"></span>Kiwi reliability</span>
+              <span class="chip"><span class="chip__dot" style="--c:#14B8B3"></span>Global craft</span>
             </div>
           </div>
         </div>
@@ -869,6 +1581,20 @@
           </div>
         </div>
       </section>
+
+      <!-- ============ INDEX ============ -->
+      <section class="section idx" aria-labelledby="idx-h">
+        <div class="container">
+          <h2 class="idx__label" id="idx-h">Index</h2>
+          <ul class="idx__list">
+            <li class="idx__item"><a href="#product"><span class="idx__n">01</span><span class="idx__t">Product</span><span class="idx__m">ERP · CRM · BI in one nest</span></a></li>
+            <li class="idx__item"><a href="#kea"><span class="idx__n">02</span><span class="idx__t">Kea AI</span><span class="idx__m">The assistant that does the work</span></a></li>
+            <li class="idx__item"><a href="#services"><span class="idx__n">03</span><span class="idx__t">Solutions</span><span class="idx__m">How we put it to work</span></a></li>
+            <li class="idx__item"><a href="#about"><span class="idx__n">04</span><span class="idx__t">About Us</span><span class="idx__m">Built in Aotearoa New Zealand</span></a></li>
+            <li class="idx__item"><a href="#contact"><span class="idx__n">05</span><span class="idx__t">Contact</span><span class="idx__m">Request early access</span></a></li>
+          </ul>
+        </div>
+      </section>
     </main>
 
     <!-- ============ FOOTER ============ -->
@@ -892,7 +1618,7 @@
           </p>
         </div>
         <div class="footer__cols">
-          <div>
+          <div class="footer__col">
             <h3>Product</h3>
             <ul>
               <li><a href="#product">Tucano Nest</a></li>
@@ -902,7 +1628,7 @@
               <li><a href="#contact">Early Access</a></li>
             </ul>
           </div>
-          <div>
+          <div class="footer__col">
             <h3>Company</h3>
             <ul>
               <li><a href="#about">About Us</a></li>
@@ -913,12 +1639,20 @@
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
-          <div>
+          <div class="footer__col">
             <h3>Get in touch</h3>
             <ul>
               <li><a href="mailto:info@tucanolabs.net">info@tucanolabs.net</a></li>
               <li>Auckland · New Zealand</li>
-              <li>Available worldwide</li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h3>Active customers</h3>
+            <ul>
+              <li>New Zealand</li>
+              <li>Australia</li>
+              <li>Brazil</li>
+              <li>United States</li>
             </ul>
           </div>
         </div>

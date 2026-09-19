@@ -26,8 +26,9 @@
 ## Company
 
 - [About Us](https://tucanolabs.net/#about): founded by Bruno Santos
-  (Co-Founder & CTO, 17+ years engineering high-scale platforms) and Danilo
-  Albertini (Co-Founder & CEO, 16+ years in product, data science and BI).
-  Based in Auckland, New Zealand. Available worldwide.
+  (Co-Founder & Managing Director, 17+ years engineering high-scale platforms) and Danilo
+  Albertini (Co-Founder & Managing Director, 16+ years in product, data science and BI).
+  Based in Auckland, New Zealand, with active customers in New Zealand,
+  Australia, Brazil and the United States.
 - [LinkedIn](https://www.linkedin.com/company/tucano-labs-ltd)
 - Contact: info@tucanolabs.net
