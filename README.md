@@ -1,16 +1,18 @@
 # Tucano Labs Website
 
-Marketing site for **Tucano Labs**, a senior-led IT consultancy in Aotearoa New Zealand
-serving the ANZ region.
+Marketing site for **Tucano Labs**. We design, build and run business platforms on Google
+Cloud, from Auckland, New Zealand. The copy and the look follow the client presentation deck.
 
 ## Stack
 
 Static site with zero build step and zero dependencies.
 
 - `index.html`: page structure and content
-- `styles.css`: design system (Space Grotesk + Inter, toucan teal/navy palette)
-- `script.js`: sticky nav, scroll reveals, hero console demo, Kea conversation,
-  module rail, counters, hero title cursor effect
+- `styles.css`: the design system (navy, teal and the toucan's yellow; Sora, Manrope, JetBrains Mono)
+- `motion.js`: the hero film and the five small case films, drawn on canvas
+- `script.js`: film controls, mobile menu, contact e-mail
+- `film.html`: the film on its own, full screen (press `F` for fullscreen, space to pause)
+- `tools/export-film.mjs`: renders the film to an MP4
 
 ## Running locally
 
@@ -28,35 +30,43 @@ deploys automatically. No build command; output directory is the repo root (`/`)
 
 Live domain: **tucanolabs.net**. Contact: **info@tucanolabs.net**.
 
-## Brand
+## The film
 
-Palette taken from the toucan in the logo. The orange is the beak only, so it
-stays in the mark and out of the interface.
+The hero is not a video file. It is a 32-second film in four chapters (Safe, Scalable,
+Stable, Compliant) drawn live by `motion.js`, so it is sharp on any screen and weighs a
+few kilobytes.
 
-- **Primary**: `#048F92` (toucan teal)
-- **Deep**: `#1D346F` (toucan navy), `#111F45`
-- **Highlight**: `#14B8B3` (teal on dark), `#FFCC2E` (beak yellow, rare)
-- **Ink**: `#0A1020` (cool near-black)
-- **Display type**: Space Grotesk
-- **Body type**: Inter
+- Every scene is a function of time: `sceneSafe(g, t, k)` draws second `t` of its chapter
+  inside a fixed 1000 x 700 box. Change a scene and reload to see it.
+- Chapter names, captions and lengths are in the `CHAPTERS` list near the middle of the file.
+- `index.html?t=12.5` opens the page with the film paused at second 12.5, which helps
+  when adjusting a scene.
+- The film stops drawing when it is off screen, and people who ask their system for
+  reduced motion get a still frame with a play button.
 
-Small text meets WCAG AA on white: `--teal-text` 6.05:1, `--muted` 4.97:1.
+To export it as a video (for LinkedIn, or a slide), with Chrome and ffmpeg installed:
+
+```bash
+node tools/export-film.mjs tucano-labs-film.mp4
+```
+
+To use real footage one day, replace the `<canvas>` inside `.film__screen` in `index.html`
+with a `<video autoplay muted loop playsinline>` and remove the chapter buttons.
 
 ## Sections
 
-1. Hero: *Run your whole business on one AI-powered platform* — full-bleed, with
-   an interactive Tucano Nest console that cycles through its modules on its own
-2. Inside Tucano Nest: continuous ticker
-3. Product: ERP / CRM / BI / Kea, on a sticky rail that follows the scroll
-4. Kea: a conversation that types itself and loops through three scripts
-5. Solutions & Services
-6. Founders: Bruno & Danilo
-7. The Tucano Spirit
-8. CTA, Index, footer
+1. Hero film: *Software your business can depend on.*
+2. Who we are
+3. Principles: Safe / Scalable / Stable / Compliant
+4. Nest: the base under our platforms, and the services we build on
+5. Work: five platforms by industry, with no client names
+6. Founders: Bruno and Danilo
+7. Contact: How can we help?
 
-## Motion
+## Brand
 
-Everything that moves on its own can be paused, and `prefers-reduced-motion`
-disables the lot. Scroll reveals are progressive enhancement: the resting
-(hidden) state only applies once JS confirms it will reveal, so with JS off or
-blocked the page renders in full.
+- **Navy**: `#111F45`, **Ink**: `#0F1B3D`
+- **Teal**: `#0B8F92`
+- **Yellow**: `#F2B705`
+- **Ground**: `#F5F7FB`
+- **Display type**: Sora. **Body type**: Manrope. **Labels**: JetBrains Mono.

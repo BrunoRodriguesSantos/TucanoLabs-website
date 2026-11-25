@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en-NZ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d1840" />
+    <meta name="robots" content="noindex" />
+    <title>Tucano Labs | The film</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="tucano-labs-logo.png" />
+    <style>
+      /* The film on its own, edge to edge: for a screen in a meeting room,
+         or as the source when exporting it to a video file. */
+      html, body { height: 100%; background: #0d1840; }
+      .film--full { height: 100vh; height: 100dvh; border-radius: 0; }
+      .film__brand { position: absolute; left: clamp(22px, 4.4vw, 72px); top: clamp(22px, 4.4vh, 56px); display: flex; align-items: center; gap: 12px; font: 700 clamp(1.1rem, 1.6vw, 1.5rem) / 1 var(--display); letter-spacing: -0.03em; text-decoration: none; }
+      .film__brand img { width: clamp(40px, 3.4vw, 56px); height: auto; }
+      .film__word { margin-top: clamp(12px, 1.6vw, 22px); font: 700 clamp(3.4rem, 9vw, 9rem) / 0.95 var(--display); letter-spacing: -0.05em; }
+      .film__line { margin-top: clamp(14px, 1.6vw, 24px); max-width: 22em; font-size: clamp(1.1rem, 1.7vw, 1.7rem); line-height: 1.35; color: rgba(255, 255, 255, 0.84); }
+      .film--full .film__content { bottom: clamp(110px, 16vh, 170px); }
+    </style>
+  </head>
+  <body>
+    <main class="film film--full" id="film">
+      <div class="film__screen" aria-hidden="true"><canvas class="film__canvas" id="film-canvas"></canvas></div>
+      <div class="film__scrim" aria-hidden="true"></div>
+
+      <a class="film__brand" href="index.html" aria-label="Tucano Labs, back to the site">
+        <img src="tucano-labs-logo.png" alt="" width="56" height="56" />
+        <span>Tucano&nbsp;Labs</span>
+      </a>
+
+      <div class="film__content">
+        <p class="eyebrow eyebrow--film"><span>What makes good software?</span></p>
+        <h1 class="film__word" id="film-word">Safe</h1>
+        <p class="film__line" id="film-line">Every request signed, every action logged.</p>
+      </div>
+
+      <div class="film__bar">
+        <div class="chapters" role="group" aria-label="Film chapters">
+          <button type="button" class="chapter" aria-label="Chapter 1, Safe"><span class="chapter__fill" aria-hidden="true"></span><span class="chapter__n" aria-hidden="true">01</span><span class="chapter__t" aria-hidden="true">Safe</span></button>
+          <button type="button" class="chapter" aria-label="Chapter 2, Scalable"><span class="chapter__fill" aria-hidden="true"></span><span class="chapter__n" aria-hidden="true">02</span><span class="chapter__t" aria-hidden="true">Scalable</span></button>
+          <button type="button" class="chapter" aria-label="Chapter 3, Stable"><span class="chapter__fill" aria-hidden="true"></span><span class="chapter__n" aria-hidden="true">03</span><span class="chapter__t" aria-hidden="true">Stable</span></button>
+          <button type="button" class="chapter" aria-label="Chapter 4, Compliant"><span class="chapter__fill" aria-hidden="true"></span><span class="chapter__n" aria-hidden="true">04</span><span class="chapter__t" aria-hidden="true">Compliant</span></button>
+        </div>
+        <span></span>
+        <button type="button" class="film__toggle" id="film-toggle" aria-label="Pause film">
+          <svg class="film__icon film__icon--pause" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4.5v11M13 4.5v11" /></svg>
+          <svg class="film__icon film__icon--play" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4.5v11l9-5.500z" /></svg>
+        </button>
+      </div>
+    </main>
+
+    <script src="motion.js"></script>
+    <script>
+      (function () {
+        var TL = window.TL, film = document.getElementById('film');
+        var player = TL.mountFilm(document.getElementById('film-canvas'), film.querySelector('.film__screen'));
+        var buttons = [].slice.call(film.querySelectorAll('.chapter'));
+        var word = document.getElementById('film-word'), line = document.getElementById('film-line'), toggle = document.getElementById('film-toggle');
+        var current = -1;
+        TL.hero = player;
+
+        player.onframe = function (at) {
+          var ch = TL.chapters[at.index];
+          buttons.forEach(function (b, i) { b.style.setProperty('--p', i < at.index ? '1' : i === at.index ? (at.t / ch.dur).toFixed(4) : '0'); });
+          // The words fade with the scene at each change of chapter
+          var fade = Math.min(1, at.t / 0.6, (ch.dur - at.t) / 0.5);
+          word.style.opacity = line.style.opacity = Math.max(0, fade).toFixed(3);
+          if (at.index !== current) {
+            current = at.index;
+            buttons.forEach(function (b, i) { if (i === current) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
+            word.textContent = ch.label; line.textContent = ch.caption;
+          }
+        };
+
+        var startOf = function (i) { var s = 0; for (var n = 0; n < i; n++) s += TL.chapters[n].dur; return s; };
+        var setPlaying = function (on) {
+          film.classList.toggle('is-paused', !on);
+          toggle.setAttribute('aria-label', on ? 'Pause film' : 'Play film');
+          if (on) player.play(); else player.pause();
+        };
+        toggle.addEventListener('click', function () { setPlaying(!player.wanted); });
+        buttons.forEach(function (b, i) { b.addEventListener('click', function () { player.seek(startOf(i) + (player.wanted ? 0.02 : TL.chapters[i].still)); }); });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'f' || e.key === 'F') { if (document.fullscreenElement) document.exitFullscreen(); else if (film.requestFullscreen) film.requestFullscreen(); }
+          if (e.key === ' ') { e.preventDefault(); setPlaying(!player.wanted); }
+        });
+
+        // ?clean hides the controls (used when exporting); ?t=12.5 shows one frame
+        var q = location.search;
+        if (/[?&]clean/.test(q)) film.querySelector('.film__toggle').style.display = 'none';
+        var seek = /[?&]t=([\d.]+)/.exec(q);
+        if (seek) { player.seek(parseFloat(seek[1])); setPlaying(false); }
+        else if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { player.seek(TL.chapters[0].still); setPlaying(false); }
+        else setPlaying(true);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { player.paint(); });
+      })();
+    </script>
+  </body>
+</html>
